@@ -53,13 +53,13 @@ export function calculateGoldPerSecond(state: GameState): number {
 
 /**
  * Calculate the prestige points earned based on total gold
- * Formula: floor(sqrt(totalGold / 1,000,000))
+ * Formula: floor(sqrt(totalGold / 1,000))
  */
 export function calculatePrestigePoints(totalGold: number): number {
-  if (totalGold < 1_000_000) {
+  if (totalGold < 1_000) {
     return 0;
   }
-  return Math.floor(Math.sqrt(totalGold / 1_000_000));
+  return Math.floor(Math.sqrt(totalGold / 1_000));
 }
 
 /**

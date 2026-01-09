@@ -76,18 +76,18 @@ describe('calculateGoldPerSecond', () => {
 });
 
 describe('calculatePrestigePoints', () => {
-  it('returns 0 for less than 1 million gold', () => {
+  it('returns 0 for less than 1000 gold', () => {
     expect(calculatePrestigePoints(0)).toBe(0);
-    expect(calculatePrestigePoints(999999)).toBe(0);
+    expect(calculatePrestigePoints(999)).toBe(0);
   });
 
-  it('returns 1 for 1 million gold', () => {
-    expect(calculatePrestigePoints(1000000)).toBe(1);
+  it('returns 1 for 1000 gold', () => {
+    expect(calculatePrestigePoints(1000)).toBe(1);
   });
 
   it('returns correct points based on sqrt formula', () => {
-    expect(calculatePrestigePoints(4000000)).toBe(2);
-    expect(calculatePrestigePoints(9000000)).toBe(3);
-    expect(calculatePrestigePoints(100000000)).toBe(10);
+    expect(calculatePrestigePoints(4000)).toBe(2);
+    expect(calculatePrestigePoints(9000)).toBe(3);
+    expect(calculatePrestigePoints(100000)).toBe(10);
   });
 });

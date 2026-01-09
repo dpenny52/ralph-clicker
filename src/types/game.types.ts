@@ -113,6 +113,16 @@ export interface BuyPrestigeUpgradeAction {
 }
 
 /**
+ * Action for adding offline earnings
+ */
+export interface AddOfflineEarningsAction {
+  type: 'ADD_OFFLINE_EARNINGS';
+  payload: {
+    amount: number;
+  };
+}
+
+/**
  * Union type of all possible game actions for the reducer
  */
 export type GameAction =
@@ -122,4 +132,5 @@ export type GameAction =
   | LoadSaveAction
   | ResetGameAction
   | PrestigeAction
-  | BuyPrestigeUpgradeAction;
+  | BuyPrestigeUpgradeAction
+  | AddOfflineEarningsAction;

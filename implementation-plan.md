@@ -149,15 +149,15 @@ A browser-based clicker game built with React + TypeScript + Vite featuring gold
 
 ---
 
-## Task 11: Offline Earnings
+## Task 11: Offline Earnings ✅
 
 **Description:** Calculate and award gold earned while away.
 
 **Accept Conditions:**
-- [ ] On load, calculates time elapsed since `lastSaveTime`
-- [ ] Awards offline gold based on gold/sec and Offline Earnings upgrade level
-- [ ] Maximum offline time capped at 24 hours
-- [ ] Displays notification showing offline earnings on load
+- [x] On load, calculates time elapsed since `lastSaveTime`
+- [x] Awards offline gold based on gold/sec and Offline Earnings upgrade level
+- [x] Maximum offline time capped at 24 hours
+- [x] Displays notification showing offline earnings on load
 
 ---
 

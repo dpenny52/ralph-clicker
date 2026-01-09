@@ -78,3 +78,28 @@ export function checkCriticalHit(criticalClickLevel: number): boolean {
   const critChance = Math.min(criticalClickLevel * 0.1, 1); // Cap at 100%
   return Math.random() < critChance;
 }
+
+/**
+ * Calculate offline earnings based on time elapsed and game state
+ * Returns the gold earned while offline
+ */
+export function calculateOfflineEarnings(state: GameState): number {
+  const now = Date.now();
+  const lastSave = state.lastSaveTime;
+
+  // Calculate elapsed time in seconds
+  let elapsedSeconds = (now - lastSave) / 1000;
+
+  // Cap at 24 hours (86400 seconds)
+  const MAX_OFFLINE_SECONDS = 24 * 60 * 60;
+  elapsedSeconds = Math.min(elapsedSeconds, MAX_OFFLINE_SECONDS);
+
+  // Get offline earnings upgrade level (10% of gold/sec per level)
+  const offlineLevel = state.upgrades['offlineEarnings'] ?? 0;
+  if (offlineLevel <= 0) return 0;
+
+  const goldPerSecond = calculateGoldPerSecond(state);
+  const offlineRate = offlineLevel * 0.1; // 10% per level
+
+  return goldPerSecond * offlineRate * elapsedSeconds;
+}

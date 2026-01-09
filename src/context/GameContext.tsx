@@ -143,6 +143,17 @@ function gameReducer(state: GameState, action: GameAction): GameState {
       };
     }
 
+    case 'ADD_OFFLINE_EARNINGS': {
+      const { amount } = action.payload;
+      if (amount <= 0) return state;
+
+      return {
+        ...state,
+        gold: state.gold + amount,
+        totalGoldEarned: state.totalGoldEarned + amount,
+      };
+    }
+
     default:
       return state;
   }

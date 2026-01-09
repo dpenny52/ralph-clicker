@@ -4,60 +4,60 @@ A browser-based clicker game built with React + TypeScript + Vite featuring gold
 
 ---
 
-## Task 1: Project Setup
+## Task 1: Project Setup ✅
 
 **Description:** Initialize the Vite project with React + TypeScript and create the folder structure.
 
 **Accept Conditions:**
-- [ ] `package.json` exists with `react`, `react-dom`, `typescript`, and `vite` dependencies
-- [ ] `tsconfig.json` exists with strict TypeScript configuration
-- [ ] `vite.config.ts` exists with React plugin configured
-- [ ] Folders exist: `src/components/`, `src/context/`, `src/hooks/`, `src/types/`, `src/utils/`, `src/data/`
-- [ ] `npm run dev` starts the development server without errors
+- [x] `package.json` exists with `react`, `react-dom`, `typescript`, and `vite` dependencies
+- [x] `tsconfig.json` exists with strict TypeScript configuration
+- [x] `vite.config.ts` exists with React plugin configured
+- [x] Folders exist: `src/components/`, `src/context/`, `src/hooks/`, `src/types/`, `src/utils/`, `src/data/`
+- [x] `npm run dev` starts the development server without errors
 
 ---
 
-## Task 2: TypeScript Types
+## Task 2: TypeScript Types ✅
 
 **Description:** Define all game-related TypeScript interfaces and types.
 
 **Accept Conditions:**
-- [ ] `src/types/game.types.ts` exists
-- [ ] `GameState` interface defined with properties: `gold`, `totalGoldEarned`, `upgrades`, `prestigePoints`, `prestigeUpgrades`, `lastSaveTime`
-- [ ] `Upgrade` interface defined with properties: `id`, `name`, `description`, `baseCost`, `costMultiplier`, `level`
-- [ ] `PrestigeUpgrade` interface defined with properties: `id`, `name`, `description`, `cost`, `purchased`
-- [ ] `GameAction` union type defined for all reducer actions
-- [ ] File compiles without TypeScript errors
+- [x] `src/types/game.types.ts` exists
+- [x] `GameState` interface defined with properties: `gold`, `totalGoldEarned`, `upgrades`, `prestigePoints`, `prestigeUpgrades`, `lastSaveTime`
+- [x] `Upgrade` interface defined with properties: `id`, `name`, `description`, `baseCost`, `costMultiplier`, `level`
+- [x] `PrestigeUpgrade` interface defined with properties: `id`, `name`, `description`, `cost`, `purchased`
+- [x] `GameAction` union type defined for all reducer actions
+- [x] File compiles without TypeScript errors
 
 ---
 
-## Task 3: Utility Functions
+## Task 3: Utility Functions ✅
 
 **Description:** Implement number formatting and game calculation utilities.
 
 **Accept Conditions:**
-- [ ] `src/utils/formatNumber.ts` exists and exports `formatNumber` function
-- [ ] `formatNumber(1000)` returns `"1K"`
-- [ ] `formatNumber(1500000)` returns `"1.5M"`
-- [ ] `src/utils/gameCalculations.ts` exists
-- [ ] `calculateUpgradeCost(baseCost, multiplier, level)` function exported and returns correct scaling cost
-- [ ] `calculateGoldPerClick(state)` function exported
-- [ ] `calculateGoldPerSecond(state)` function exported
-- [ ] `calculatePrestigePoints(totalGold)` function exported
+- [x] `src/utils/formatNumber.ts` exists and exports `formatNumber` function
+- [x] `formatNumber(1000)` returns `"1K"`
+- [x] `formatNumber(1500000)` returns `"1.5M"`
+- [x] `src/utils/gameCalculations.ts` exists
+- [x] `calculateUpgradeCost(baseCost, multiplier, level)` function exported and returns correct scaling cost
+- [x] `calculateGoldPerClick(state)` function exported
+- [x] `calculateGoldPerSecond(state)` function exported
+- [x] `calculatePrestigePoints(totalGold)` function exported
 
 ---
 
-## Task 4: Game Data Definitions
+## Task 4: Game Data Definitions ✅
 
 **Description:** Define upgrade and prestige upgrade configurations.
 
 **Accept Conditions:**
-- [ ] `src/data/upgrades.ts` exists and exports `UPGRADES` array
-- [ ] 5 upgrades defined: Click Power, Auto Clicker, Gold Multiplier, Critical Click, Offline Earnings
-- [ ] Each upgrade has `id`, `name`, `description`, `baseCost`, `costMultiplier` properties
-- [ ] `src/data/prestigeUpgrades.ts` exists and exports `PRESTIGE_UPGRADES` array
-- [ ] 4 prestige upgrades defined: Starting Gold, Click Bonus, Auto Bonus, Prestige Multiplier
-- [ ] Each prestige upgrade has `id`, `name`, `description`, `cost` properties
+- [x] `src/data/upgrades.ts` exists and exports `UPGRADES` array
+- [x] 5 upgrades defined: Click Power, Auto Clicker, Gold Multiplier, Critical Click, Offline Earnings
+- [x] Each upgrade has `id`, `name`, `description`, `baseCost`, `costMultiplier` properties
+- [x] `src/data/prestigeUpgrades.ts` exists and exports `PRESTIGE_UPGRADES` array
+- [x] 4 prestige upgrades defined: Starting Gold, Click Bonus, Auto Bonus, Prestige Multiplier
+- [x] Each prestige upgrade has `id`, `name`, `description`, `cost` properties
 
 ---
 

@@ -1,5 +1,5 @@
 import { describe, it, expect } from 'vitest';
-import type { GameState, GameAction } from '../types/game.types';
+import type { GameState } from '../types/game.types';
 
 // Recreate the reducer logic for testing the PRESTIGE threshold
 const PRESTIGE_THRESHOLD = 1_000;

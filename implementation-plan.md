@@ -61,21 +61,21 @@ A browser-based clicker game built with React + TypeScript + Vite featuring gold
 
 ---
 
-## Task 5: Game State Context
+## Task 5: Game State Context ✅
 
 **Description:** Create React Context with useReducer for game state management.
 
 **Accept Conditions:**
-- [ ] `src/context/GameContext.tsx` exists
-- [ ] `GameContext` and `GameProvider` exported
-- [ ] `useGame` hook exported for consuming context
-- [ ] Reducer handles `CLICK` action: increases gold based on click power
-- [ ] Reducer handles `BUY_UPGRADE` action: deducts cost and increments upgrade level
-- [ ] Reducer handles `TICK` action: adds passive gold based on gold/sec
-- [ ] Reducer handles `LOAD_SAVE` action: restores state from saved data
-- [ ] Reducer handles `RESET_GAME` action: resets to initial state
-- [ ] Reducer handles `PRESTIGE` action: resets gold/upgrades, adds prestige points
-- [ ] Reducer handles `BUY_PRESTIGE_UPGRADE` action: deducts prestige points, marks upgrade purchased
+- [x] `src/context/GameContext.tsx` exists
+- [x] `GameContext` and `GameProvider` exported
+- [x] `useGame` hook exported for consuming context
+- [x] Reducer handles `CLICK` action: increases gold based on click power
+- [x] Reducer handles `BUY_UPGRADE` action: deducts cost and increments upgrade level
+- [x] Reducer handles `TICK` action: adds passive gold based on gold/sec
+- [x] Reducer handles `LOAD_SAVE` action: restores state from saved data
+- [x] Reducer handles `RESET_GAME` action: resets to initial state
+- [x] Reducer handles `PRESTIGE` action: resets gold/upgrades, adds prestige points
+- [x] Reducer handles `BUY_PRESTIGE_UPGRADE` action: deducts prestige points, marks upgrade purchased
 
 ---
 

@@ -176,17 +176,17 @@ A browser-based clicker game built with React + TypeScript + Vite featuring gold
 
 ---
 
-## Task 13: App Assembly
+## Task 13: App Assembly ✅
 
 **Description:** Assemble all components in App.tsx with styling.
 
 **Accept Conditions:**
-- [ ] `src/App.tsx` wraps app in `GameProvider`
-- [ ] Layout includes: GoldDisplay, ClickButton, UpgradePanel, PrestigePanel
-- [ ] `src/App.css` contains responsive styling
-- [ ] Game loop hook is active
-- [ ] Auto-save hook is active
-- [ ] Application runs without console errors
+- [x] `src/App.tsx` wraps app in `GameProvider`
+- [x] Layout includes: GoldDisplay, ClickButton, UpgradePanel, PrestigePanel
+- [x] `src/App.css` contains responsive styling
+- [x] Game loop hook is active
+- [x] Auto-save hook is active
+- [x] Application runs without console errors
 
 ---
 

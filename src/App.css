@@ -1,42 +1,362 @@
-#root {
-  max-width: 1280px;
+/* Game Container */
+.game-container {
+  max-width: 1200px;
   margin: 0 auto;
-  padding: 2rem;
+  padding: 1rem;
+  min-height: 100vh;
+}
+
+.game-header {
+  text-align: center;
+  margin-bottom: 2rem;
+}
+
+.game-header h1 {
+  font-size: 2.5rem;
+  color: #ffd700;
+  text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.3);
+}
+
+.game-main {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 2rem;
+}
+
+@media (min-width: 768px) {
+  .game-main {
+    grid-template-columns: 1fr 1fr;
+  }
+
+  .game-section-center {
+    grid-column: 1 / -1;
+  }
+}
+
+@media (min-width: 1024px) {
+  .game-main {
+    grid-template-columns: 1fr 2fr 1fr;
+  }
+
+  .game-section-center {
+    grid-column: 2;
+    grid-row: 1;
+  }
+
+  .game-section-upgrades {
+    grid-column: 1;
+    grid-row: 1;
+  }
+
+  .game-section-prestige {
+    grid-column: 3;
+    grid-row: 1;
+  }
+}
+
+/* Gold Display */
+.gold-display {
+  text-align: center;
+  margin-bottom: 1.5rem;
+}
+
+.gold-amount {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.gold-value {
+  font-size: 3rem;
+  font-weight: bold;
+  color: #ffd700;
+}
+
+.gold-label {
+  font-size: 1.2rem;
+  color: #888;
+}
+
+.gold-per-second {
+  font-size: 1rem;
+  color: #aaa;
+  margin-top: 0.5rem;
+}
+
+/* Click Button */
+.click-button {
+  padding: 2rem 3rem;
+  font-size: 1.5rem;
+  font-weight: bold;
+  background: linear-gradient(145deg, #ffd700, #ffaa00);
+  border: none;
+  border-radius: 50%;
+  width: 180px;
+  height: 180px;
+  cursor: pointer;
+  transition: transform 0.1s ease, box-shadow 0.1s ease;
+  box-shadow: 0 4px 15px rgba(255, 215, 0, 0.4);
+}
+
+.click-button:hover {
+  transform: scale(1.05);
+  box-shadow: 0 6px 20px rgba(255, 215, 0, 0.6);
+}
+
+.click-button.clicking {
+  transform: scale(0.95);
+}
+
+.click-button .click-label {
+  display: block;
+  font-size: 1.8rem;
+  color: #333;
+}
+
+.click-button .click-value {
+  display: block;
+  font-size: 0.9rem;
+  color: #555;
+  margin-top: 0.5rem;
+}
+
+/* Upgrade Panel */
+.upgrade-panel {
+  background: rgba(255, 255, 255, 0.05);
+  border-radius: 12px;
+  padding: 1rem;
+}
+
+.upgrade-panel-title {
+  font-size: 1.5rem;
+  margin-bottom: 1rem;
+  color: #4ade80;
+}
+
+.upgrade-list {
+  display: flex;
+  flex-direction: column;
+  gap: 0.75rem;
+}
+
+.upgrade-card {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  background: rgba(255, 255, 255, 0.08);
+  padding: 0.75rem 1rem;
+  border-radius: 8px;
+  gap: 1rem;
+}
+
+.upgrade-info {
+  flex: 1;
+  text-align: left;
+}
+
+.upgrade-name {
+  font-size: 1rem;
+  margin: 0 0 0.25rem 0;
+  color: #fff;
+}
+
+.upgrade-description {
+  font-size: 0.8rem;
+  color: #aaa;
+  margin: 0 0 0.25rem 0;
+}
+
+.upgrade-level {
+  font-size: 0.75rem;
+  color: #4ade80;
+}
+
+.upgrade-buy-button {
+  padding: 0.5rem 1rem;
+  font-size: 0.85rem;
+  background: #4ade80;
+  border: none;
+  border-radius: 6px;
+  cursor: pointer;
+  color: #000;
+  font-weight: bold;
+  white-space: nowrap;
+}
+
+.upgrade-buy-button:disabled {
+  background: #555;
+  color: #888;
+  cursor: not-allowed;
+}
+
+/* Prestige Panel */
+.prestige-panel {
+  background: rgba(147, 51, 234, 0.1);
+  border-radius: 12px;
+  padding: 1rem;
+}
+
+.prestige-panel-title {
+  font-size: 1.5rem;
+  margin-bottom: 1rem;
+  color: #a855f7;
+}
+
+.prestige-info {
+  margin-bottom: 1.5rem;
+}
+
+.prestige-points {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin-bottom: 1rem;
+}
+
+.prestige-points-value {
+  font-size: 2rem;
+  font-weight: bold;
+  color: #a855f7;
+}
+
+.prestige-points-label {
+  font-size: 0.9rem;
+  color: #888;
+}
+
+.prestige-action {
   text-align: center;
 }
 
-.logo {
-  height: 6em;
-  padding: 1.5em;
-  will-change: filter;
-  transition: filter 300ms;
-}
-.logo:hover {
-  filter: drop-shadow(0 0 2em #646cffaa);
-}
-.logo.react:hover {
-  filter: drop-shadow(0 0 2em #61dafbaa);
+.prestige-potential {
+  margin-bottom: 0.5rem;
+  color: #ccc;
 }
 
-@keyframes logo-spin {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
-  }
+.prestige-button {
+  padding: 0.75rem 1.5rem;
+  font-size: 1rem;
+  background: linear-gradient(145deg, #a855f7, #7c3aed);
+  border: none;
+  border-radius: 8px;
+  cursor: pointer;
+  color: #fff;
+  font-weight: bold;
 }
 
-@media (prefers-reduced-motion: no-preference) {
-  a:nth-of-type(2) .logo {
-    animation: logo-spin infinite 20s linear;
-  }
+.prestige-button:disabled {
+  background: #444;
+  color: #666;
+  cursor: not-allowed;
 }
 
-.card {
-  padding: 2em;
+.prestige-upgrades h3 {
+  font-size: 1.1rem;
+  margin-bottom: 0.75rem;
+  color: #c084fc;
 }
 
-.read-the-docs {
+.prestige-upgrade-list {
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+}
+
+.prestige-upgrade-card {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  background: rgba(255, 255, 255, 0.05);
+  padding: 0.5rem 0.75rem;
+  border-radius: 6px;
+  gap: 0.75rem;
+}
+
+.prestige-upgrade-card.purchased {
+  opacity: 0.6;
+  background: rgba(168, 85, 247, 0.2);
+}
+
+.prestige-upgrade-info {
+  flex: 1;
+  text-align: left;
+}
+
+.prestige-upgrade-name {
+  font-size: 0.9rem;
+  margin: 0 0 0.15rem 0;
+  color: #fff;
+}
+
+.prestige-upgrade-description {
+  font-size: 0.75rem;
+  color: #aaa;
+  margin: 0;
+}
+
+.prestige-upgrade-buy-button {
+  padding: 0.4rem 0.75rem;
+  font-size: 0.8rem;
+  background: #a855f7;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+  color: #fff;
+  font-weight: bold;
+  white-space: nowrap;
+}
+
+.prestige-upgrade-buy-button:disabled {
+  background: #555;
   color: #888;
+  cursor: not-allowed;
+}
+
+/* Offline Earnings Notification */
+.offline-earnings-notification {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: rgba(0, 0, 0, 0.8);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  z-index: 1000;
+}
+
+.notification-content {
+  background: linear-gradient(145deg, #1a1a2e, #16213e);
+  padding: 2rem 3rem;
+  border-radius: 16px;
+  text-align: center;
+  border: 2px solid #ffd700;
+}
+
+.notification-content h3 {
+  font-size: 1.5rem;
+  color: #ffd700;
+  margin-bottom: 1rem;
+}
+
+.notification-content p {
+  font-size: 1.2rem;
+  color: #fff;
+  margin-bottom: 1.5rem;
+}
+
+.notification-content button {
+  padding: 0.75rem 2rem;
+  font-size: 1.1rem;
+  background: #ffd700;
+  border: none;
+  border-radius: 8px;
+  cursor: pointer;
+  color: #000;
+  font-weight: bold;
+}
+
+.notification-content button:hover {
+  background: #ffed4a;
 }

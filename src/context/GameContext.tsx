@@ -12,7 +12,6 @@ import {
   calculatePrestigePoints,
   calculateUpgradeCost,
   getUpgradeById,
-  checkCriticalHit,
 } from '../utils/gameCalculations';
 
 function createInitialState(): GameState {
@@ -33,9 +32,8 @@ function gameReducer(state: GameState, action: GameAction): GameState {
     case 'CLICK': {
       let goldEarned = calculateGoldPerClick(state);
 
-      // Check for critical hit
-      const critLevel = state.upgrades['criticalClick'] ?? 0;
-      if (checkCriticalHit(critLevel)) {
+      // Apply critical hit multiplier if specified
+      if (action.payload?.isCritical) {
         goldEarned *= 5;
       }
 

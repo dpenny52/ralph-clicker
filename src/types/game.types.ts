@@ -59,6 +59,9 @@ export interface PrestigeUpgrade {
  */
 export interface ClickAction {
   type: 'CLICK';
+  payload?: {
+    isCritical?: boolean;
+  };
 }
 
 /**

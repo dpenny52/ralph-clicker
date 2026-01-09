@@ -79,16 +79,16 @@ A browser-based clicker game built with React + TypeScript + Vite featuring gold
 
 ---
 
-## Task 6: Gold Display Component
+## Task 6: Gold Display Component ✅
 
 **Description:** Build component showing current gold and gold per second.
 
 **Accept Conditions:**
-- [ ] `src/components/GoldDisplay.tsx` exists
-- [ ] Displays current gold amount using `formatNumber`
-- [ ] Displays gold per second rate
-- [ ] Updates reactively when game state changes
-- [ ] Component renders without errors
+- [x] `src/components/GoldDisplay.tsx` exists
+- [x] Displays current gold amount using `formatNumber`
+- [x] Displays gold per second rate
+- [x] Updates reactively when game state changes
+- [x] Component renders without errors
 
 ---
 

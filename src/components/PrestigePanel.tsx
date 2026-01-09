@@ -4,7 +4,7 @@ import { PRESTIGE_UPGRADES } from '../data/prestigeUpgrades';
 export function PrestigePanel() {
   const { state, dispatch, potentialPrestigePoints } = useGame();
 
-  const canPrestige = state.totalGoldEarned >= 1_000_000;
+  const canPrestige = state.totalGoldEarned >= 1_000;
 
   const handlePrestige = () => {
     dispatch({ type: 'PRESTIGE' });
@@ -33,7 +33,7 @@ export function PrestigePanel() {
             onClick={handlePrestige}
             disabled={!canPrestige}
           >
-            {canPrestige ? 'Prestige Now' : 'Need 1M Total Gold'}
+            {canPrestige ? 'Prestige Now' : 'Need 1K Total Gold'}
           </button>
         </div>
       </div>

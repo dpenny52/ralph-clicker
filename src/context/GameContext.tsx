@@ -94,8 +94,8 @@ function gameReducer(state: GameState, action: GameAction): GameState {
     }
 
     case 'PRESTIGE': {
-      // Can only prestige with at least 1 million total gold
-      if (state.totalGoldEarned < 1_000_000) return state;
+      // Can only prestige with at least 1000 total gold
+      if (state.totalGoldEarned < 1_000) return state;
 
       let prestigePointsEarned = calculatePrestigePoints(state.totalGoldEarned);
 

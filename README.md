@@ -1,73 +1,110 @@
-# React + TypeScript + Vite
+# Ralph Clicker
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+An incremental clicker game built with React, TypeScript, and Vite. Click to earn gold, purchase upgrades, and prestige to earn permanent bonuses.
 
-Currently, two official plugins are available:
+## Prerequisites
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Babel](https://babeljs.io/) (or [oxc](https://oxc.rs) when used in [rolldown-vite](https://vite.dev/guide/rolldown)) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+- Node.js (v18 or higher recommended)
+- npm
 
-## React Compiler
+## Installation
 
-The React Compiler is not enabled on this template because of its impact on dev & build performances. To add it, see [this documentation](https://react.dev/learn/react-compiler/installation).
-
-## Expanding the ESLint configuration
-
-If you are developing a production application, we recommend updating the configuration to enable type-aware lint rules:
-
-```js
-export default defineConfig([
-  globalIgnores(['dist']),
-  {
-    files: ['**/*.{ts,tsx}'],
-    extends: [
-      // Other configs...
-
-      // Remove tseslint.configs.recommended and replace with this
-      tseslint.configs.recommendedTypeChecked,
-      // Alternatively, use this for stricter rules
-      tseslint.configs.strictTypeChecked,
-      // Optionally, add this for stylistic rules
-      tseslint.configs.stylisticTypeChecked,
-
-      // Other configs...
-    ],
-    languageOptions: {
-      parserOptions: {
-        project: ['./tsconfig.node.json', './tsconfig.app.json'],
-        tsconfigRootDir: import.meta.dirname,
-      },
-      // other options...
-    },
-  },
-])
+```bash
+npm install
 ```
 
-You can also install [eslint-plugin-react-x](https://github.com/Rel1cx/eslint-react/tree/main/packages/plugins/eslint-plugin-react-x) and [eslint-plugin-react-dom](https://github.com/Rel1cx/eslint-react/tree/main/packages/plugins/eslint-plugin-react-dom) for React-specific lint rules:
+## Running the Game
 
-```js
-// eslint.config.js
-import reactX from 'eslint-plugin-react-x'
-import reactDom from 'eslint-plugin-react-dom'
+Start the development server:
 
-export default defineConfig([
-  globalIgnores(['dist']),
-  {
-    files: ['**/*.{ts,tsx}'],
-    extends: [
-      // Other configs...
-      // Enable lint rules for React
-      reactX.configs['recommended-typescript'],
-      // Enable lint rules for React DOM
-      reactDom.configs.recommended,
-    ],
-    languageOptions: {
-      parserOptions: {
-        project: ['./tsconfig.node.json', './tsconfig.app.json'],
-        tsconfigRootDir: import.meta.dirname,
-      },
-      // other options...
-    },
-  },
-])
+```bash
+npm run dev
 ```
+
+The game will be available at `http://localhost:5173` (or the next available port).
+
+## Building for Production
+
+```bash
+npm run build
+```
+
+The built files will be in the `dist` directory. Preview the production build with:
+
+```bash
+npm run preview
+```
+
+## Running Tests
+
+```bash
+npm test
+```
+
+## Code Quality
+
+Run type checking and linting:
+
+```bash
+npm run check
+```
+
+Run linting only:
+
+```bash
+npm run lint
+```
+
+## How to Play
+
+### Basic Gameplay
+
+1. **Click the button** to earn gold
+2. **Buy upgrades** to increase your gold production
+3. **Prestige** when you've earned enough gold to gain permanent bonuses
+
+### Upgrades
+
+Purchase these upgrades to boost your gold income:
+
+| Upgrade | Effect |
+|---------|--------|
+| Click Power | +1 gold per click |
+| Auto Clicker | +0.1 gold per second (passive) |
+| Gold Multiplier | +50% passive gold generation |
+| Critical Click | 10% chance for 5x gold on click |
+| Offline Earnings | Earn 10% of gold/sec while away |
+
+Each upgrade can be purchased multiple times, with costs increasing each time.
+
+### Prestige System
+
+Once you've earned **1,000 total gold**, you can prestige:
+
+- Prestiging resets your gold and regular upgrades
+- You earn **Prestige Points** based on your total gold earned
+- Prestige Points are used to buy permanent upgrades that persist across prestiges
+
+### Prestige Upgrades
+
+| Upgrade | Cost | Effect |
+|---------|------|--------|
+| Starting Gold | 1 PP | Start with 100 gold after prestige |
+| Click Bonus | 2 PP | +50% gold per click |
+| Auto Bonus | 3 PP | +25% passive gold generation |
+| Prestige Multiplier | 5 PP | +10% prestige points earned |
+
+### Tips
+
+- Focus on Click Power early to get a solid foundation
+- Auto Clickers provide passive income, letting you earn gold even when not clicking
+- Save up for Critical Click to occasionally hit big payouts
+- Prestige when progress slows down to earn Prestige Points for permanent bonuses
+- The game saves automatically and tracks offline earnings
+
+## Tech Stack
+
+- React 19
+- TypeScript
+- Vite
+- Vitest (testing)

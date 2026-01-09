@@ -161,18 +161,18 @@ A browser-based clicker game built with React + TypeScript + Vite featuring gold
 
 ---
 
-## Task 12: Prestige Panel Component
+## Task 12: Prestige Panel Component ✅
 
 **Description:** Build prestige UI showing points and prestige upgrades.
 
 **Accept Conditions:**
-- [ ] `src/components/PrestigePanel.tsx` exists
-- [ ] Displays current prestige points
-- [ ] Shows prestige button with potential points to earn
-- [ ] Prestige button disabled when under 1 million total gold
-- [ ] Prestige button dispatches `PRESTIGE` action
-- [ ] Displays prestige upgrades with buy buttons
-- [ ] Purchased prestige upgrades visually marked as owned
+- [x] `src/components/PrestigePanel.tsx` exists
+- [x] Displays current prestige points
+- [x] Shows prestige button with potential points to earn
+- [x] Prestige button disabled when under 1 million total gold
+- [x] Prestige button dispatches `PRESTIGE` action
+- [x] Displays prestige upgrades with buy buttons
+- [x] Purchased prestige upgrades visually marked as owned
 
 ---
 

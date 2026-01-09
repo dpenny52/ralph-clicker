@@ -1,0 +1,207 @@
+# Ralph Clicker - Process Tasks
+
+A browser-based clicker game built with React + TypeScript + Vite featuring gold earning, upgrades, prestige system, and localStorage persistence.
+
+---
+
+## Task 1: Project Setup
+
+**Description:** Initialize the Vite project with React + TypeScript and create the folder structure.
+
+**Accept Conditions:**
+- [ ] `package.json` exists with `react`, `react-dom`, `typescript`, and `vite` dependencies
+- [ ] `tsconfig.json` exists with strict TypeScript configuration
+- [ ] `vite.config.ts` exists with React plugin configured
+- [ ] Folders exist: `src/components/`, `src/context/`, `src/hooks/`, `src/types/`, `src/utils/`, `src/data/`
+- [ ] `npm run dev` starts the development server without errors
+
+---
+
+## Task 2: TypeScript Types
+
+**Description:** Define all game-related TypeScript interfaces and types.
+
+**Accept Conditions:**
+- [ ] `src/types/game.types.ts` exists
+- [ ] `GameState` interface defined with properties: `gold`, `totalGoldEarned`, `upgrades`, `prestigePoints`, `prestigeUpgrades`, `lastSaveTime`
+- [ ] `Upgrade` interface defined with properties: `id`, `name`, `description`, `baseCost`, `costMultiplier`, `level`
+- [ ] `PrestigeUpgrade` interface defined with properties: `id`, `name`, `description`, `cost`, `purchased`
+- [ ] `GameAction` union type defined for all reducer actions
+- [ ] File compiles without TypeScript errors
+
+---
+
+## Task 3: Utility Functions
+
+**Description:** Implement number formatting and game calculation utilities.
+
+**Accept Conditions:**
+- [ ] `src/utils/formatNumber.ts` exists and exports `formatNumber` function
+- [ ] `formatNumber(1000)` returns `"1K"`
+- [ ] `formatNumber(1500000)` returns `"1.5M"`
+- [ ] `src/utils/gameCalculations.ts` exists
+- [ ] `calculateUpgradeCost(baseCost, multiplier, level)` function exported and returns correct scaling cost
+- [ ] `calculateGoldPerClick(state)` function exported
+- [ ] `calculateGoldPerSecond(state)` function exported
+- [ ] `calculatePrestigePoints(totalGold)` function exported
+
+---
+
+## Task 4: Game Data Definitions
+
+**Description:** Define upgrade and prestige upgrade configurations.
+
+**Accept Conditions:**
+- [ ] `src/data/upgrades.ts` exists and exports `UPGRADES` array
+- [ ] 5 upgrades defined: Click Power, Auto Clicker, Gold Multiplier, Critical Click, Offline Earnings
+- [ ] Each upgrade has `id`, `name`, `description`, `baseCost`, `costMultiplier` properties
+- [ ] `src/data/prestigeUpgrades.ts` exists and exports `PRESTIGE_UPGRADES` array
+- [ ] 4 prestige upgrades defined: Starting Gold, Click Bonus, Auto Bonus, Prestige Multiplier
+- [ ] Each prestige upgrade has `id`, `name`, `description`, `cost` properties
+
+---
+
+## Task 5: Game State Context
+
+**Description:** Create React Context with useReducer for game state management.
+
+**Accept Conditions:**
+- [ ] `src/context/GameContext.tsx` exists
+- [ ] `GameContext` and `GameProvider` exported
+- [ ] `useGame` hook exported for consuming context
+- [ ] Reducer handles `CLICK` action: increases gold based on click power
+- [ ] Reducer handles `BUY_UPGRADE` action: deducts cost and increments upgrade level
+- [ ] Reducer handles `TICK` action: adds passive gold based on gold/sec
+- [ ] Reducer handles `LOAD_SAVE` action: restores state from saved data
+- [ ] Reducer handles `RESET_GAME` action: resets to initial state
+- [ ] Reducer handles `PRESTIGE` action: resets gold/upgrades, adds prestige points
+- [ ] Reducer handles `BUY_PRESTIGE_UPGRADE` action: deducts prestige points, marks upgrade purchased
+
+---
+
+## Task 6: Gold Display Component
+
+**Description:** Build component showing current gold and gold per second.
+
+**Accept Conditions:**
+- [ ] `src/components/GoldDisplay.tsx` exists
+- [ ] Displays current gold amount using `formatNumber`
+- [ ] Displays gold per second rate
+- [ ] Updates reactively when game state changes
+- [ ] Component renders without errors
+
+---
+
+## Task 7: Click Button Component
+
+**Description:** Build the main click button for earning gold.
+
+**Accept Conditions:**
+- [ ] `src/components/ClickButton.tsx` exists
+- [ ] Button dispatches `CLICK` action when clicked
+- [ ] Visual feedback on click (scale animation or similar)
+- [ ] Displays gold earned per click
+- [ ] Component renders without errors
+
+---
+
+## Task 8: Upgrade Components
+
+**Description:** Build upgrade card and panel components.
+
+**Accept Conditions:**
+- [ ] `src/components/UpgradeCard.tsx` exists
+- [ ] Displays upgrade name, description, current level, and cost
+- [ ] Buy button dispatches `BUY_UPGRADE` action
+- [ ] Buy button disabled when insufficient gold
+- [ ] `src/components/UpgradePanel.tsx` exists
+- [ ] Renders all 5 upgrades using `UpgradeCard`
+- [ ] Components render without errors
+
+---
+
+## Task 9: Game Loop
+
+**Description:** Implement passive gold generation game loop.
+
+**Accept Conditions:**
+- [ ] `src/hooks/useGameLoop.ts` exists
+- [ ] Hook dispatches `TICK` action at 100ms intervals
+- [ ] Tick adds fractional gold (goldPerSecond / 10)
+- [ ] Loop starts on mount and cleans up on unmount
+- [ ] Auto Clicker upgrade increases gold/sec when leveled
+
+---
+
+## Task 10: Save System
+
+**Description:** Implement localStorage persistence with auto-save.
+
+**Accept Conditions:**
+- [ ] `src/utils/storage.ts` exists
+- [ ] `saveGame(state)` function saves state to localStorage
+- [ ] `loadGame()` function returns saved state or null
+- [ ] `clearSave()` function removes saved state
+- [ ] `src/hooks/useAutoSave.ts` exists
+- [ ] Auto-saves every 30 seconds
+- [ ] Saves on `beforeunload` event
+- [ ] Game state persists after page refresh
+
+---
+
+## Task 11: Offline Earnings
+
+**Description:** Calculate and award gold earned while away.
+
+**Accept Conditions:**
+- [ ] On load, calculates time elapsed since `lastSaveTime`
+- [ ] Awards offline gold based on gold/sec and Offline Earnings upgrade level
+- [ ] Maximum offline time capped at 24 hours
+- [ ] Displays notification showing offline earnings on load
+
+---
+
+## Task 12: Prestige Panel Component
+
+**Description:** Build prestige UI showing points and prestige upgrades.
+
+**Accept Conditions:**
+- [ ] `src/components/PrestigePanel.tsx` exists
+- [ ] Displays current prestige points
+- [ ] Shows prestige button with potential points to earn
+- [ ] Prestige button disabled when under 1 million total gold
+- [ ] Prestige button dispatches `PRESTIGE` action
+- [ ] Displays prestige upgrades with buy buttons
+- [ ] Purchased prestige upgrades visually marked as owned
+
+---
+
+## Task 13: App Assembly
+
+**Description:** Assemble all components in App.tsx with styling.
+
+**Accept Conditions:**
+- [ ] `src/App.tsx` wraps app in `GameProvider`
+- [ ] Layout includes: GoldDisplay, ClickButton, UpgradePanel, PrestigePanel
+- [ ] `src/App.css` contains responsive styling
+- [ ] Game loop hook is active
+- [ ] Auto-save hook is active
+- [ ] Application runs without console errors
+
+---
+
+## Task 14: End-to-End Verification
+
+**Description:** Verify complete game functionality.
+
+**Accept Conditions:**
+- [ ] Clicking the button increases gold by the correct amount
+- [ ] Buying upgrades deducts gold and applies effects
+- [ ] Auto Clicker generates passive gold over time
+- [ ] Critical Click randomly triggers 5x gold on clicks
+- [ ] Game state persists after page refresh
+- [ ] Offline earnings are awarded after being away
+- [ ] Prestige resets gold and upgrades at 1M+ total gold
+- [ ] Prestige points are calculated correctly
+- [ ] Prestige upgrades provide permanent bonuses after reset
+- [ ] `npm run build` completes without errors

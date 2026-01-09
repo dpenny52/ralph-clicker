@@ -120,16 +120,16 @@ A browser-based clicker game built with React + TypeScript + Vite featuring gold
 
 ---
 
-## Task 9: Game Loop
+## Task 9: Game Loop ✅
 
 **Description:** Implement passive gold generation game loop.
 
 **Accept Conditions:**
-- [ ] `src/hooks/useGameLoop.ts` exists
-- [ ] Hook dispatches `TICK` action at 100ms intervals
-- [ ] Tick adds fractional gold (goldPerSecond / 10)
-- [ ] Loop starts on mount and cleans up on unmount
-- [ ] Auto Clicker upgrade increases gold/sec when leveled
+- [x] `src/hooks/useGameLoop.ts` exists
+- [x] Hook dispatches `TICK` action at 100ms intervals
+- [x] Tick adds fractional gold (goldPerSecond / 10)
+- [x] Loop starts on mount and cleans up on unmount
+- [x] Auto Clicker upgrade increases gold/sec when leveled
 
 ---
 

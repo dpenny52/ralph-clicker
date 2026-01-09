@@ -133,19 +133,19 @@ A browser-based clicker game built with React + TypeScript + Vite featuring gold
 
 ---
 
-## Task 10: Save System
+## Task 10: Save System ✅
 
 **Description:** Implement localStorage persistence with auto-save.
 
 **Accept Conditions:**
-- [ ] `src/utils/storage.ts` exists
-- [ ] `saveGame(state)` function saves state to localStorage
-- [ ] `loadGame()` function returns saved state or null
-- [ ] `clearSave()` function removes saved state
-- [ ] `src/hooks/useAutoSave.ts` exists
-- [ ] Auto-saves every 30 seconds
-- [ ] Saves on `beforeunload` event
-- [ ] Game state persists after page refresh
+- [x] `src/utils/storage.ts` exists
+- [x] `saveGame(state)` function saves state to localStorage
+- [x] `loadGame()` function returns saved state or null
+- [x] `clearSave()` function removes saved state
+- [x] `src/hooks/useAutoSave.ts` exists
+- [x] Auto-saves every 30 seconds
+- [x] Saves on `beforeunload` event
+- [x] Game state persists after page refresh
 
 ---
 

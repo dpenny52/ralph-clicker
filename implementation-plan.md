@@ -105,18 +105,18 @@ A browser-based clicker game built with React + TypeScript + Vite featuring gold
 
 ---
 
-## Task 8: Upgrade Components
+## Task 8: Upgrade Components ✅
 
 **Description:** Build upgrade card and panel components.
 
 **Accept Conditions:**
-- [ ] `src/components/UpgradeCard.tsx` exists
-- [ ] Displays upgrade name, description, current level, and cost
-- [ ] Buy button dispatches `BUY_UPGRADE` action
-- [ ] Buy button disabled when insufficient gold
-- [ ] `src/components/UpgradePanel.tsx` exists
-- [ ] Renders all 5 upgrades using `UpgradeCard`
-- [ ] Components render without errors
+- [x] `src/components/UpgradeCard.tsx` exists
+- [x] Displays upgrade name, description, current level, and cost
+- [x] Buy button dispatches `BUY_UPGRADE` action
+- [x] Buy button disabled when insufficient gold
+- [x] `src/components/UpgradePanel.tsx` exists
+- [x] Renders all 5 upgrades using `UpgradeCard`
+- [x] Components render without errors
 
 ---
 

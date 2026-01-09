@@ -190,18 +190,18 @@ A browser-based clicker game built with React + TypeScript + Vite featuring gold
 
 ---
 
-## Task 14: End-to-End Verification
+## Task 14: End-to-End Verification ✅
 
 **Description:** Verify complete game functionality.
 
 **Accept Conditions:**
-- [ ] Clicking the button increases gold by the correct amount
-- [ ] Buying upgrades deducts gold and applies effects
-- [ ] Auto Clicker generates passive gold over time
-- [ ] Critical Click randomly triggers 5x gold on clicks
-- [ ] Game state persists after page refresh
-- [ ] Offline earnings are awarded after being away
-- [ ] Prestige resets gold and upgrades at 1M+ total gold
-- [ ] Prestige points are calculated correctly
-- [ ] Prestige upgrades provide permanent bonuses after reset
-- [ ] `npm run build` completes without errors
+- [x] Clicking the button increases gold by the correct amount
+- [x] Buying upgrades deducts gold and applies effects
+- [x] Auto Clicker generates passive gold over time
+- [x] Critical Click randomly triggers 5x gold on clicks
+- [x] Game state persists after page refresh
+- [x] Offline earnings are awarded after being away
+- [x] Prestige resets gold and upgrades at 1M+ total gold
+- [x] Prestige points are calculated correctly
+- [x] Prestige upgrades provide permanent bonuses after reset
+- [x] `npm run build` completes without errors

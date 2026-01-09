@@ -92,16 +92,16 @@ A browser-based clicker game built with React + TypeScript + Vite featuring gold
 
 ---
 
-## Task 7: Click Button Component
+## Task 7: Click Button Component ✅
 
 **Description:** Build the main click button for earning gold.
 
 **Accept Conditions:**
-- [ ] `src/components/ClickButton.tsx` exists
-- [ ] Button dispatches `CLICK` action when clicked
-- [ ] Visual feedback on click (scale animation or similar)
-- [ ] Displays gold earned per click
-- [ ] Component renders without errors
+- [x] `src/components/ClickButton.tsx` exists
+- [x] Button dispatches `CLICK` action when clicked
+- [x] Visual feedback on click (scale animation or similar)
+- [x] Displays gold earned per click
+- [x] Component renders without errors
 
 ---
 
